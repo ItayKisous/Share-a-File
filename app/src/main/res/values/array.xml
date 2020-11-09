@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="yearSelect">
+        <item>תשעח</item>
+        <item>תשעט</item>
+        <item>תשפ</item>
+        <item>תשפא</item>
+    </string-array>
+</resources>
