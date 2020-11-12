@@ -10,6 +10,9 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class Splash extends AppCompatActivity {
     private ImageView img1;
     private TextView txt1;

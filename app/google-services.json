@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "385244247600",
+    "firebase_url": "https://schoolproject-a8289.firebaseio.com",
+    "project_id": "schoolproject-a8289",
+    "storage_bucket": "schoolproject-a8289.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:385244247600:android:947f9ba790a54f9017dff5",
+        "android_client_info": {
+          "package_name": "com.itay.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "385244247600-du8aue4mpbjp099mumoo96kdd57448p8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.itay.myapplication",
+            "certificate_hash": "d8d1eeda5c77cd46b9a00e0be77ec5bd78971e4c"
+          }
+        },
+        {
+          "client_id": "385244247600-fjt6h5fcrc22in96dji5g22eejhil2er.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfAgIIhJhBTaXYPICMG4wjic-0IMrMiyU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "385244247600-fjt6h5fcrc22in96dji5g22eejhil2er.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
