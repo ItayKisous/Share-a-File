@@ -16,7 +16,7 @@ import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 
 public class Register extends AppCompatActivity {
     private Button btnRegister;
-    private EditText etEmail, etPassword;
+    private EditText etEmail, etPassword, etUsername, etFirstname, etSurname;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +25,9 @@ public class Register extends AppCompatActivity {
         btnRegister = findViewById(R.id.btnSubmitRegister);
         etEmail=findViewById(R.id.etEmailRegister);
         etPassword=findViewById(R.id.etPasswordRegister);
+        etUsername = findViewById(R.id.etUsernameRegister);
+        etFirstname=findViewById(R.id.etName);
+        etSurname=findViewById(R.id.etSurname);
 
         EventHandler();
     }
@@ -39,15 +42,19 @@ public class Register extends AppCompatActivity {
     }
 
     private void Reg(){
-        String email = etEmail.getText().toString();
-        String password = etPassword.getText().toString();
+        final String email = etEmail.getText().toString();
+        final String password = etPassword.getText().toString();
+        final String username = etUsername.getText().toString();
+        final String firstname = etFirstname.getText().toString();
+        final String surname = etSurname.getText().toString();
 
         DBref.Auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
+                            User u = new User(email, password, username, firstname, surname);
+                            DBref.refUsers.child(email.replace('.', ' ')).setValue(u);
                             Toast.makeText(Register.this, "Registered Successfully", Toast.LENGTH_LONG).show();
                         } else {
                            if (task.getException() instanceof FirebaseAuthUserCollisionException)
