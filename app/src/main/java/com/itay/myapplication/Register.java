@@ -3,7 +3,10 @@ package com.itay.myapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -30,6 +33,25 @@ public class Register extends AppCompatActivity {
         etSurname=findViewById(R.id.etSurname);
 
         EventHandler();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        Intent i = new Intent(getApplicationContext(), Settings.class);
+
+        switch(item.getItemId()){
+            case R.id.Settings:
+                i = new Intent(getApplicationContext(), Settings.class);
+                startActivity(i);
+                break;
+        }
+        return true;
     }
 
     private void EventHandler() {
