@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "385244247600-c2i8kmi4mflbco8ob4errmo9ggri6llm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.itay.myapplication",
+            "certificate_hash": "5b55f39fe5aa7bffd3b0712bb4b3cc7539e04dfe"
+          }
+        },
+        {
           "client_id": "385244247600-du8aue4mpbjp099mumoo96kdd57448p8.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

@@ -2,7 +2,12 @@ package com.itay.myapplication;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -78,6 +83,19 @@ public class Register extends AppCompatActivity {
                             User u = new User(email, password, username, firstname, surname);
                             DBref.refUsers.child(email.replace('.', ' ')).setValue(u);
                             Toast.makeText(Register.this, "Registered Successfully", Toast.LENGTH_LONG).show();
+                            NotificationManager mNotificationManager = (NotificationManager)
+                                    getSystemService(Context.NOTIFICATION_SERVICE);
+                            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O){
+                                NotificationChannel channel = new NotificationChannel("YOUR_CHANNEL_ID",
+                                        "YOUR_CHANNEL_NAME", NotificationManager.IMPORTANCE_DEFAULT);
+                                channel.setDescription("YOUR_NOTIFICATION_CHANNEL_DESCRIPTION");
+                                mNotificationManager.createNotificationChannel(channel);
+                            }
+                            NotificationCompat.Builder mBuilder = new
+                                    NotificationCompat.Builder(getApplicationContext(), "YOUR_CHANNEL_ID")
+                                    .setSmallIcon(R.mipmap.ic_launcher).setContentTitle("Welcome to APP_NAME!")
+                                    .setContentText("Registered Successfully!").setAutoCancel(true);
+                            mNotificationManager.notify(0, mBuilder.build());
                         } else {
                            if (task.getException() instanceof FirebaseAuthUserCollisionException)
                                Toast.makeText(Register.this, "Email already in use", Toast.LENGTH_LONG).show();
