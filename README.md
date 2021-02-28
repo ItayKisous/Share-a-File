@@ -1,7 +1,8 @@
 /--------------------------------------------------------------------------------------------------------------------------------/
 This is my school project in Software Engineering.
 
-My project is meant to help people locate all of the apps students of Software Engineering have made.
-The project is meant to help all the students and teachers around the country who are working in the same program of Java App Development.
+My project is an app that can allow the creation of groups while the posts having pdf files that can be opened.
+Later on, this project will be continued via the project of MAX (https://max-imize.com/) while we choose a more social problem
+that we will deal with.
 
 /--------------------------------------------------------------------------------------------------------------------------------/
