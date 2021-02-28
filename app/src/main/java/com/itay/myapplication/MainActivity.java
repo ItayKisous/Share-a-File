@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btnRegister, btnLogin, btnDevApp;
+    private Button btnRegister, btnLogin;
     private TextView txt1;
     private ImageView img1;
 
@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
 
         btnRegister=findViewById(R.id.btnRegister);
         btnLogin=findViewById(R.id.btnLogin);
-        btnDevApp=findViewById(R.id.btnForm);
 
 
         EventHandler();
@@ -64,14 +63,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), Login.class);
-                startActivity(i);
-            }
-        });
-
-        btnDevApp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(v.getContext(), DevForm.class);
                 startActivity(i);
             }
         });

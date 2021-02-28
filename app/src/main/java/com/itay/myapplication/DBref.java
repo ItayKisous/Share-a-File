@@ -10,5 +10,8 @@ public class DBref {
     public static FirebaseDatabase DataBase = FirebaseDatabase.getInstance();
 
     public static DatabaseReference refUsers = DataBase.getReference("Users");
+    public static DatabaseReference refGroups = DataBase.getReference("Groups");
+    public static DatabaseReference refPosts = DataBase.getReference("Posts");
+    public static DatabaseReference refPDF = DataBase.getReference("UploadPDF");
 
 }

@@ -2,4 +2,5 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:title="Settings" android:id="@+id/Settings" />
     <item android:title="Logout" android:id="@+id/Logout"/>
+    <item android:title="Create Group" android:id="@+id/AddGroup" />
 </menu>

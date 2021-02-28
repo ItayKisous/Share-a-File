@@ -3,6 +3,9 @@
     xmlns:dist="http://schemas.android.com/apk/distribution"
     package="com.itay.myapplication">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <dist:module dist:instant="true" />
 
     <application
@@ -12,9 +15,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Settings"></activity>
+        <activity android:name=".CreatePost" />
+        <activity android:name=".Posts" />
+        <activity android:name=".Settings" />
         <activity android:name=".MainMenu" />
-        <activity android:name=".DevForm" />
         <activity android:name=".Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,6 +29,7 @@
         <activity android:name=".Register" />
         <activity android:name=".Login" />
         <activity android:name=".MainActivity" />
+        <activity android:name=".PdfViewer" />
     </application>
 
 </manifest>

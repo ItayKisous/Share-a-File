@@ -3,6 +3,7 @@ package com.itay.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -44,7 +45,14 @@ public class Splash extends AppCompatActivity {
                 }
                 finish();
 
+                SharedPreferences settings1 = getSharedPreferences("PREFS_NAME", 0);
+                boolean isChecked = settings1.getBoolean("isChecked", false);
                 Intent i = new Intent(Splash.this, MainActivity.class);
+                if (DBref.Auth.getCurrentUser() != null && isChecked)
+                    i.setClass(Splash.this, MainMenu.class);
+                else
+                    i.setClass(Splash.this, MainActivity.class);
+
                 startActivity(i);
             }
         };
