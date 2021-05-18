@@ -46,18 +46,6 @@ public class Register extends AppCompatActivity {
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-        Intent i = new Intent(getApplicationContext(), Settings.class);
-
-        switch(item.getItemId()){
-            case R.id.Settings:
-                i = new Intent(getApplicationContext(), Settings.class);
-                startActivity(i);
-                break;
-        }
-        return true;
-    }
 
     private void EventHandler() {
         btnRegister.setOnClickListener(new View.OnClickListener() {
@@ -85,7 +73,7 @@ public class Register extends AppCompatActivity {
                             Toast.makeText(Register.this, "Registered Successfully", Toast.LENGTH_LONG).show();
                             NotificationManager mNotificationManager = (NotificationManager)
                                     getSystemService(Context.NOTIFICATION_SERVICE);
-                            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O){
+                            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O){ //בודק האם הגרסא של האנדרואיד תומכת בהודעות
                                 NotificationChannel channel = new NotificationChannel("YOUR_CHANNEL_ID",
                                         "YOUR_CHANNEL_NAME", NotificationManager.IMPORTANCE_DEFAULT);
                                 channel.setDescription("YOUR_NOTIFICATION_CHANNEL_DESCRIPTION");
@@ -93,7 +81,7 @@ public class Register extends AppCompatActivity {
                             }
                             NotificationCompat.Builder mBuilder = new
                                     NotificationCompat.Builder(getApplicationContext(), "YOUR_CHANNEL_ID")
-                                    .setSmallIcon(R.mipmap.ic_launcher).setContentTitle("Welcome to APP_NAME!")
+                                    .setSmallIcon(R.mipmap.ic_launcher).setContentTitle("Welcome to Share a File!")
                                     .setContentText("Registered Successfully!").setAutoCancel(true);
                             mNotificationManager.notify(0, mBuilder.build());
                         } else {

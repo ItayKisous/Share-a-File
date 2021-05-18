@@ -37,18 +37,6 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-        Intent i = new Intent(getApplicationContext(), Settings.class);
-
-        switch(item.getItemId()){
-            case R.id.Settings:
-                i = new Intent(getApplicationContext(), Settings.class);
-                startActivity(i);
-                break;
-        }
-        return true;
-    }
 
     private void EventHandler() {
         btnRegister.setOnClickListener(new View.OnClickListener() {

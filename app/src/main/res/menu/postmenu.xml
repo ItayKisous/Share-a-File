@@ -3,5 +3,6 @@
 
     <item android:title="Add Post" android:id="@+id/AddPost"/>
     <item android:title="Add Member" android:id="@+id/AddMember"/>
+    <item android:title="Logout" android:id="@+id/Logout"/>
 
 </menu>

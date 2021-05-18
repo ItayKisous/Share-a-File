@@ -99,6 +99,31 @@ public class Posts extends AppCompatActivity {
                 startActivity(i);
                 break;
 
+            case R.id.Logout:
+                AlertDialog alertDialog = new AlertDialog.Builder(this)
+                        .setIcon(R.drawable.logo)
+
+                        .setTitle("You sure you want to log out?")
+
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Toast.makeText(getApplicationContext(), "Logged Out", Toast.LENGTH_LONG).show();
+                                Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                                DBref.Auth.signOut();
+                                startActivity(i);
+                            }
+                        })
+
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Toast.makeText(getApplicationContext(), "Didn't Log Out", Toast.LENGTH_LONG).show();
+                            }
+                        })
+                        .show();
+                break;
+
             case R.id.AddMember:
                 final View customDialog = getLayoutInflater().inflate(R.layout.addmember_dialog, null);
                 AlertDialog alertDialog1 = new AlertDialog.Builder(this)

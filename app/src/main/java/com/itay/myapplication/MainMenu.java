@@ -108,13 +108,8 @@ public class MainMenu extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
-        Intent i = new Intent(getApplicationContext(), Settings.class);
 
         switch(item.getItemId()){
-            case R.id.Settings:
-                i = new Intent(getApplicationContext(), Settings.class);
-                startActivity(i);
-                break;
 
             case R.id.Logout:
                 AlertDialog alertDialog = new AlertDialog.Builder(this)

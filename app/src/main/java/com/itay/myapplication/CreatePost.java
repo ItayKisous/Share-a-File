@@ -118,7 +118,6 @@ public class CreatePost extends AppCompatActivity {
         DBref.refGroups.child(GroupID).child("PostsKeys").child(PostID).setValue(p1);
         HashMap<String, Object> NewPostToGroup = new HashMap<>();
         NewPostToGroup.put(PostID, "true");
-        //DBref.refGroups.child(GroupID).child("PostsKeys").updateChildren(NewPostToGroup);
         HashMap<String, Object> NewPostToUser =new HashMap<>();
         NewPostToUser.put(PostID, "true");
         DBref.refUsers.child(EmailConn.replace('.', ' ')).child("PostsKeys").updateChildren(NewPostToUser);
