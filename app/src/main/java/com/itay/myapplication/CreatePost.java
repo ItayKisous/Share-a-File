@@ -58,10 +58,23 @@ public class CreatePost extends AppCompatActivity {
         Intent pdfIntent = new Intent();
         pdfIntent.setType("application/pdf");
         pdfIntent.setAction(pdfIntent.ACTION_GET_CONTENT);
-        startActivityForResult(Intent.createChooser(pdfIntent,"PDF FILE SELECT"), 12);
+        startActivityForResult(Intent.createChooser(pdfIntent,"PDF FILE SELECT"), 12); // RequestCode = מאיזה אינטנט חזרנו
     }
 
+    // Intent = עצם קשירה בזמן ריצה בין רכיבים שונים
+    // לדוגמה - broadcast receiver
+
+    // Broadcast Receiver = מחלקה של היישום המאזין למסרים המיועדים לו
+    // שיחות טלפון, SMS וכו
+
+    // Content Provider = רכיב שמטרתו לספק מידע לאפליקציות אחרות
+
+    // Service = מבצע פעולות ארוכות טווח ברקע, רכיב יכול לקשר לשירות כדי לקיים אינטרקציה או תקשורת
+
+    // Activity - רכיב חיוני והאופן שבו פעילויות משוגרות
+
     protected void onActivityResult(int requestCode, int resultCode, final @Nullable Intent data){
+        // מה שקורה לאחר העלאת הקובת (SelectPDF)
         super.onActivityResult(requestCode, resultCode, data);
 
         if(requestCode==12 && resultCode==RESULT_OK && data!=null && data.getData()!= null){
